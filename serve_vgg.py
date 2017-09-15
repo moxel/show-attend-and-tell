@@ -4,12 +4,9 @@ import numpy as np
 import json
 
 import moxel
-from moxel.space import Image, String
+from moxel.space import Image, String, Array
 
 
-#img_in = Image.from_file('example/rock.jpg')
-#img_in.resize((224, 224))
-#
 vgg_model_path = './data/imagenet-vgg-verydeep-19.mat'
 vggnet = Vgg19(vgg_model_path)
 vggnet.build()
@@ -23,9 +20,9 @@ def predict(ins):
         tf.initialize_all_variables().run()
 
         feats = sess.run(vggnet.features, feed_dict={vggnet.images: image_batch})
-        print(feats)
     return {
-        'feature': String.from_str(str(feats))
+        # 'feature': String.from_str(str(feats))
+        'feature': Array.from_numpy(feats)
     }
 
 

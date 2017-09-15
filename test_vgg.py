@@ -15,4 +15,4 @@ results = model.predict({
 })
 
 
-print(results['feature'])
+print(results['feature'].to_numpy())

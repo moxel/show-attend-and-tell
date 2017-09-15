@@ -2,13 +2,14 @@ name: vgg19
 tag: latest
 image: moxel/py3-tf-cpu
 assets:
+- data/imagenet-vgg-verydeep-19.mat
 resources:
   cpu: 1
   memory: "1Gi"
 input_space:
   image: Image
 output_space:
-  feature: String
+  feature: Array
 main:
   type: python  
   entrypoint: serve_vgg.py::predict
