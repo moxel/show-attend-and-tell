@@ -1,0 +1,8 @@
+.DS_STORE
+*.swp
+*.swo
+.ropeproject
+*.pyc
+/models
+/data
+/image
