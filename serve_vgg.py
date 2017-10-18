@@ -12,10 +12,9 @@ vggnet = Vgg19(vgg_model_path)
 vggnet.build()
 
 
-def predict(ins):
-    img_in = ins['image']
-    img_in.resize((224, 224))
-    image_batch = np.array([img_in.to_numpy()]).astype(np.float32)
+def predict(image):
+    image.resize((224, 224))
+    image_batch = np.array([image.to_numpy()]).astype(np.float32)
     with tf.Session() as sess:
         tf.initialize_all_variables().run()
 

@@ -1,6 +1,6 @@
 name: vgg19
 tag: latest
-image: moxel/py3-tf-cpu
+image: py3-tf
 assets:
 - data/imagenet-vgg-verydeep-19.mat
 resources:
